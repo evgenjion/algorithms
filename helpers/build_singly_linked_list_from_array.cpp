@@ -21,3 +21,18 @@ ListNode* buildList (std::vector<int> &list) {
 
   return head;
 }
+
+void printList (ListNode *head) {
+  std::cout << "{ ";
+
+  while (head) {
+    std::cout << head->val;
+
+    if (head->next) std::cout << ",";
+    std::cout << " ";
+
+    head = head->next;
+  }
+
+  std:: cout << "}" << std::endl;
+}
