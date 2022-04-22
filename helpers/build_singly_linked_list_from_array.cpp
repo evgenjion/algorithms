@@ -1,11 +1,6 @@
-#include <iostream>
-#include <vector>
+#include "linked_list.cpp"
 
-struct ListNode {
-  int val;
-  ListNode *next;
-  ListNode(int x) : val(x), next(NULL) {}
-};
+#include <vector>
 
 ListNode* buildList (std::vector<int> &list) {
   if (!list.size()) return NULL;
@@ -23,17 +18,17 @@ ListNode* buildList (std::vector<int> &list) {
   return head;
 }
 
-void printList (ListNode *head) {
-  std::cout << "{ ";
+// void printList (ListNode *head) {
+//   std::cout << "{ ";
 
-  while (head) {
-    std::cout << head->val;
+//   while (head) {
+//     std::cout << head->val;
 
-    if (head->next) std::cout << ",";
-    std::cout << " ";
+//     if (head->next) std::cout << ",";
+//     std::cout << " ";
 
-    head = head->next;
-  }
+//     head = head->next;
+//   }
 
-  std:: cout << "}" << std::endl;
-}
+//   std:: cout << "}" << std::endl;
+// }
