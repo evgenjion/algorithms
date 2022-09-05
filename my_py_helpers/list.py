@@ -10,9 +10,8 @@ class ListNode:
     @staticmethod
     def print(node: ListNode):
         print("{", end=' ')
-        while node is not None:
-            # print(node.val, end=', ')
-            print(f'{node.val}, ', end='')
+        while node:
+            print(f'{node.val}{"," if node.next else ""} ', end='')
             node = node.next
         print("}")
 
@@ -28,6 +27,4 @@ class ListNode:
             cur.next = ListNode(n)
             cur = cur.next
 
-        head = head.next
-
-        return head
+        return head.next
