@@ -1,3 +1,5 @@
+#pragma once
+
 #include "linked_list.cpp"
 
 #include <vector>
