@@ -1,2 +1,2 @@
 [MESSAGES CONTROL]
-disable=dangerous-default-value,redefined-builtin,invalid-name,redefined-outer-name,missing-function-docstring,missing-class-docstring
+disable=dangerous-default-value,redefined-builtin,invalid-name,redefined-outer-name,missing-function-docstring,missing-class-docstring,multiple-statements,consider-using-enumerate
