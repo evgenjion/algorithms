@@ -3,6 +3,36 @@ from typing import List
 
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
+        l = self.binarySearchFindMostIndex(nums, target, True)
+
+        if l == -1: return [l, l]
+
+        r = self.binarySearchFindMostIndex(nums, target, False)
+
+        return [l, r]
+
+    def binarySearchFindMostIndex(self, nums: List[int], target: int, leftMost: bool) -> int:
+        l, r = 0, len(nums)-1
+        i = -1 # left(right)most index
+
+        while l <= r:
+            m = (l + r) // 2
+
+            if target < nums[m]:
+                r = m - 1
+            elif target > nums[m]:
+                l = m + 1
+            else: # if equals continue to search leftmost or rightmost index
+                i = m
+                if leftMost:
+                    r = m - 1
+                else:
+                    l = m + 1
+
+        return i
+
+    # O(N) in worst case
+    def searchRange_first_take(self, nums: List[int], target: int) -> List[int]:
         l = r = -1
         length = len(nums)
 
@@ -35,6 +65,6 @@ arr = [0,1,2,3,4,5,6,7,8,8,8,8,8,8,9]
 s = Solution()
 
 
-print(s.searchRange([1], 1))
-# print(s.searchRange(arr, 8))
+# print(s.searchRange([1], 1))
+print(s.searchRange(arr, 8))
 # print(s.searchRange([2,2], 3))
